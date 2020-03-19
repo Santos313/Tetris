@@ -1,27 +1,20 @@
 package source;
 
+import java.awt.event.KeyListener;
+
 import javax.swing.JFrame;
 
-public class WindowFrame extends JFrame {
+public class WindowFrame extends Frame {
 
-	public static final int WIDTH = 640, HEIGHT = 720;
+	private static final KeyListener Board = null;
 
 	public WindowFrame() {
-		setTitle("Game Legendaris Klasik Susun Balok Lucu Warna-Warni Hanya Menyerupai tapi Bukan TETRIS 2019");
+		window.add(new Board());
 
-		setSize(WIDTH, HEIGHT);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setLocationRelativeTo(null);
-		setResizable(false);
-
-		Board board = new Board();
-		add(board);
-
-		setGlassPane(new GlassPane());
-		getGlassPane().setVisible(true);
-		addKeyListener(board);
-
-		setVisible(true);
+		window.add(new GlassPane());
+		window.setVisible(true);
+		
+		window.addKeyListener(Board);
 	}
 
 }
